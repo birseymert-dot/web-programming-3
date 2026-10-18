@@ -1,0 +1,11 @@
+{
+  "name": "web-programming-3",
+  "version": "1.0.0",
+  "description": "University Course Management System",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "node tests.js"
+  },
+  "license": "ISC"
+}
