@@ -1,14 +1,11 @@
 function calculateClassAverage(students, courseId) {
-    const grades = [];
 
-    students.forEach(student => {
-        student.courses.forEach(course => {
-            if (course.courseId === courseId) {
-                grades.push(course.grade);
-            }
-        });
-    });
-
+    const grades = students.flatMap((student) =>
+        student.courses
+            .filter((course) => course.courseId === courseId)
+            .map((course) => course.grade)
+    );
+   
     if (grades.length === 0) return 0;
     const total = grades.reduce((sum, grade) => sum + grade, 0);
     return total / grades.length;
