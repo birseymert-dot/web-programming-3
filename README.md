@@ -36,8 +36,7 @@ Ali's grades (90 and 85) give him the higher average.
   `Array.prototype.filter` with a caller-supplied `criteriaFn`, so it can be
   reused for any condition (e.g., "took course 102", "average above 80").
 
-- `addCourse` validates that a grade is a number between 0 and 100 and
-  throws a `RangeError` otherwise.
+- The Student constructor and addCourse validate grades between 0 and 100 and throw a RangeError for invalid grades.
 - `findTopStudent` returns `null` for an empty list (a bare `.reduce()`
   would throw), and `main.js` handles that case.
 
