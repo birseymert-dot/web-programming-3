@@ -13,6 +13,8 @@ fetchStudents((rawData) => {
     // Test immutability of the id property
     console.log("Testing Immutability:");
     console.log(`Original ID: ${students[0].id}`);
+    const descriptor = Object.getOwnPropertyDescriptor(students[0], "id");
+    console.log(`ID is read-only: ${!descriptor.writable && !descriptor.configurable}`);
     console.log("Attempting to change ID to 999...");
     students[0].id = 999; // Should silently fail (non-writable)
     console.log(`Final ID: ${students[0].id} (Success: ID did not change)\n`);
